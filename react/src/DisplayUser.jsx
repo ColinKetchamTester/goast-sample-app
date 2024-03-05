@@ -5,15 +5,15 @@ function DisplayUser() {
 
   return (
     <>
-      {username ? (
+      {username === null ? (
+        <div>Username is null</div>
+      ) : (
         <>
           <div>Firstname: {username.first}</div>
           <div>Lastname: {username.last}</div>
         </>
-      ) : (
-        <div>User's name has been cleared or is not set.</div>
       )}
-      <button onClick={() => setUsername(null)}>Clear Name</button>
+      <button onClick={() => setUsername({first: '', last: ''})}>Clear Name</button>
     </>
   );
 }
